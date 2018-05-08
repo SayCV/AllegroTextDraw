@@ -36,7 +36,7 @@ def scrGenerator(dxffile, symbolname):
     targfn = scr_dstdir
 
     with open(origfn, 'r') as ifile, open(targfn, 'w') as ofile:
-        content = ifile.read().replace('@SYMBOL_NAME@', symbolname).replace('@IMPORT_DXFFILE@', dxffile)
+        content = ifile.read().replace('@SYMBOL_NAME@', symbolname[:32]).replace('@IMPORT_DXFFILE@', dxffile)
         ofile.write(content)
 
 def batGenerator(scrname, symbolname):
