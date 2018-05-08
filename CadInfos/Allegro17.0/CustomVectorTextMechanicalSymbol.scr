@@ -1,0 +1,74 @@
+# Allegro Script file created by :
+# ATD Copyright @ 2018-2018
+# https://github.com/SayCV/AllegroTextDraw
+
+version 14.0
+enved
+setwindow Form.prfedit
+FORM prfedit treelist Ui
+FORM prfedit noconfirm YES
+FORM prfedit done
+ 
+setwindow pcb
+#################### New MECHANICAL : @SYMBOL_NAME@ ##################
+new
+newdrawfillin "@SYMBOL_NAME@.dra" "Mechanical Symbol"
+prmed
+setwindow Form.prmedit
+FORM prmedit design
+FORM prmedit type Mechanical
+FORM prmedit units Millimeter
+FORM prmedit size Other
+FORM prmedit accuracy 4
+FORM prmedit width 124
+FORM prmedit height 124
+FORM prmedit apply
+FORM prmedit x -62
+FORM prmedit y -62
+FORM prmedit apply
+FORM prmedit lock_mode Line
+FORM prmedit lock_direction Off
+FORM prmedit apply
+FORM prmedit done
+setwindow pcb
+dxf in
+ani
+setwindow form.dxfInMain
+FORM dxfInMain browsedxf  
+fillin "@IMPORT_DXFFILE@"
+FORM dxfInMain editcnvprofile  
+setwindow form.dxfInMapping
+FORM dxfInMapping mappinggrid cell 2,1 
+FORM dxfInMapping mappinggrid change 2,1 yes 
+FORM dxfInMapping mappinggrid change 2,3 'PACKAGE GEOMETRY'
+FORM dxfInMapping mappinggrid change 2,4 SILKSCREEN_TOP 
+FORM dxfInMapping done
+setwindow form.dxfInMain
+FORM dxfInMain import  
+setwindow pcb
+trapsize 928
+setwindow form.dxfInMain
+FORM dxfInMain cancel
+setwindow pcb
+decompose shape
+setwindow form.mini
+FORM mini class PACKAGE GEOMETRY 
+FORM mini subclass SILKSCREEN_TOP 
+setwindow pcb
+drag_start -62 62
+drag_stop 62 -62
+pop done
+compose shape
+setwindow form.mini
+FORM mini class PACKAGE GEOMETRY 
+FORM mini subclass SILKSCREEN_TOP
+setwindow pcb
+drag_start -62 62
+drag_stop 62 -62
+pop done
+setwindow pcb
+Create Symbol
+fillin "@SYMBOL_NAME@.bsm"
+save
+
+exit

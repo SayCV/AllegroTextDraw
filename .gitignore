@@ -1,0 +1,11 @@
+*.stamp
+*.bak
+*.log
+*.bat
+*.dxf
+*.pyc
+*.cnv
+
+# allegro
+*,*
+
