@@ -1,4 +1,4 @@
-Draw Verctor Text for Cadence Allegro PCB
+Draw Vector Text for Cadence Allegro PCB
 
 Use
 ===
