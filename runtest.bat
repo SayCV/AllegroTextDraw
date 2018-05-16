@@ -3,7 +3,7 @@ set "TOPDIR=%cd%"
 
 set "MINICONDA_ROOT="
 set "QCAD_ROOT="
-set "CDSROOT="
+set "CDSROOT=E:\pgm\EDA\Cadence-Allegro-16.6\Programs"
 
 echo [ATD] - DO not operate your PC and waiting for finished...
 
